@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html ng-app ='appl' ng-cloak ng-init = "">
+<head>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+	<script src="script.js" type ='text/javascript'></script>
+	<title>Antique shop</title>
+</head>
+
+<body>
+
+<h3>Cheap Stuff</h3>
+<div ng-controller ='cntrl'>
+<div>
+	<label>No. of chairs </label>
+	<input id = 'b' type="text" ng-model = 'chair'>
+</div>
+<div>
+	<label>No. of tables </label>
+	<input id = 'c' type="text" ng-model = 'table'>
+</div>
+<br>
+<label>chair price : 150 rs</label><br>
+<label>table price : 200 rs</label>
+<br><br>
+<p>
+	<button ng-click = 'totalprice(); count = count + 1' ng-hide = '!hideswitch'>Calculate price</button>
+</p>
+<p ng-hide = 'hideswitch'>
+<button ng-click = 'reset()'>Change quantity</button>
+<br>
+<br>
+<label>Limited offer : {{chair}} chairs & <span ng-bind = 'table'></span> tables available for Rs </label>
+<label><strong>{{total}}/-</strong> only!!</label>
+<br>
+<label>Price has been calculated {{count}} times.</label>
+</p>
+
+<hr>
+<h4>Vehicles available for sale:</h4>
+<ul>
+	<li ng-repeat ='vehicle in vehicles' ng-if ='$index > 0'>
+	{{vehicle.company}} {{vehicle.model}}
+</li>
+</ul>
+
+</div>
+
+</body>
+</html>
