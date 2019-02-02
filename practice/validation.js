@@ -2,27 +2,22 @@ var appln = angular.module("appl", [])
 
 appln.controller("cntrl", function($scope){
 
-	$scope.chair =0;
-	$scope.table= 0;
-
-	$scope.switch = true;
-
-	$scope.clicked =function(){
-		$scope.calculation =  (+$scope.chair) +  (+$scope.table );
-		$scope.switch= false;
-	}
-
-	$scope.elements = [
+	$scope.members = [
 	{
-		item : "abc", number : '4'
+		fname : 'will', 
+		lname : 'smith'
 	},
 	{
-		item : "def", number : '45'
-	},
-	{
-		item : "xyz", number : '16'
+		fname : 'johnny', 
+		lname : 'depp'
 	}
 	]
 
-
+	$scope.saveUser = function(user){
+		if($scope.userForm.$valid){
+			$scope.members.push({
+				fname : user.FNAME , lname : user.LNAME 
+			});
+		}
+	}
 })

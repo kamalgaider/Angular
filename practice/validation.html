@@ -11,22 +11,35 @@
 
 <div ng-controller ='cntrl'>
 
-	<label>chair:</label>
-	<input type="text" ng-model= 'chair'><br>
-	<label>table:</label>
-	<input type="text" ng-model= 'table'>
-	<br>
 
-	<button ng-hide = "!switch" ng-click="clicked()">click me</button>
-	<label>total number of articles: <span ng-bind ="calculation"></span></label>
-	<br>
-	<label>no of items{{(+chair) + (+table)}}</label>
-	
+<form name ="userForm" >
+
+
+	<label>Members:</label><br>
 	<ul>
-		<li ng-repeat = "e in elements" ng-if = "$index > 0">{{e.item + " " + e.number}}</li>
-
+		<li ng-repeat ='m in members'>
+		{{m.fname + " " + m.lname}}
+		</li>
 	</ul>
 
+	<label>First name:</label>
+	<input type="text" ng-model= 'user.FNAME' name = "F" ng-required ='true' ng-minlength = '2' placeholder ='First Name'>
+	<label ng-show = 'userForm.F.$dirty && userForm.F.$error.required'>Please enter first name</label>
+	<label ng-show = 'userForm.F.$dirty && userForm.F.$error.minlength'>First name must have atleast 2 characters</label>
+	<br>
+
+	<label>Last name :</label>
+	<input type="text" ng-model= 'user.LNAME' name = "L" ng-required ='true' ng-minlength = '2' placeholder ='Last Name'>
+	<label ng-show = 'userForm.L.$dirty && userForm.L.$error.required'>Please enter last name</label>
+	<label ng-show = 'userForm.L.$dirty && userForm.L.$error.minlength'>Last name must have atleast 2 characters</label>
+	<br>
+	<br>
+
+	
+	<button ng-click = "saveUser(user)" ng-disabled = "userForm.$invalid">
+		Add member</button>
+
+</form>
 
 </div>
 
