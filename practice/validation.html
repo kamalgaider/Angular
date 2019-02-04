@@ -18,9 +18,11 @@
 	<label>Members:</label><br>
 	<ul>
 		<li ng-repeat ='m in members'>
-		{{m.fname + " " + m.lname}}
+		{{m.fname + " " + m.lname + " is a " + m.genre + " hero and is currently " + m.retire}}
 		</li>
 	</ul>
+	<br>
+
 
 	<label>First name:</label>
 	<input type="text" ng-model= 'user.FNAME' name = "F" ng-required ='true' ng-minlength = '2' placeholder ='First Name'>
@@ -33,6 +35,16 @@
 	<label ng-show = 'userForm.L.$dirty && userForm.L.$error.required'>Please enter last name</label>
 	<label ng-show = 'userForm.L.$dirty && userForm.L.$error.minlength'>Last name must have atleast 2 characters</label>
 	<br>
+	
+	<label>Genre:</label>
+	<select ng-model= "user.GENRE" ng-required = "true">
+		<option>comedy</option>
+		<option>action</option>		
+	</select>
+	<br>
+
+	<input type="checkbox" ng-model ="user.RETIRE" ng-false-value ="'Not retired'" ng-true-value ="'Retired'" value ="'true'">
+	<label>Retired</label>
 	<br>
 
 	
