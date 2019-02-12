@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html ng-app = 'inherit' ng-cloak>
+<head>
+	<title>Home Page</title>
+	<script src = 'https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.7.7/angular.min.js'></script>
+	<script type="text/javascript" src = 'inheritance.js'></script>
+</head>
+<body>
+
+<div ng-controller = 'kid as k'>
+	<p>{{k.child.Name + " says " + k.child.Sound + " & " + k.child.bark}}</p>
+	
+
+</div>
+
+</body>
+</html>
