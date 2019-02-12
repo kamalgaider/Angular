@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html ng-app = "filterExample" ng-init="names = ['Stephan', 'Peter', 'Anton', 'John', 'Chris']" ng-cloak>
+<head>
+	<title>Filters</title>
+	<script src ='https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.7.7/angular.js'></script>
+	<script src = 'filters.js' type="text/javascript"></script>
+</head>
+<body>
+
+<div ng-controller = 'main'>
+<form name ="userForm" >
+
+	<label>{{date | date: 'medium'}}</label><br>
+	<label>{{date | date: 'yyyy/MM/dd hh:mma'}}</label><br>
+
+	<label>First name:</label>
+	<input type="text" name="nm" ng-model = 'fname'>
+	<br>
+	<label>Donate amount:</label>
+	<input type="text" name="da" ng-model = 'amount'><br>
+
+	<p ng-show = "userForm.nm.$dirty && userForm.da.$dirty">
+	<label>{{fname | uppercase}} wants to donate {{amount | currency}}</label><br>
+
+	<label>Total donation collected:</label>
+	{{num | number :4 }} dollars
+	</p><br>
+
+<p>15 characters : {{chars | limitTo : 15}}</p>
+<br>
+<p>Top 3 names in list:</p>
+<ul>
+	<li ng-repeat =" n in names | limitTo: 3">
+	{{n}}
+	</li>
+</ul><br>
+
+<p>Students sorted by marks:</p>
+<ul>
+	<li ng-repeat = "st in students |orderBy :'marks'">
+	{{st.nm + " got "+ st.marks +" marks"}}
+	</li>
+</ul>
+
+<ul>
+	<li ng-repeat = "d in days">
+		{{d.day}} :   {{d.rain | rainFltr}}
+	</li>
+</ul>
+
+
+</form>
+
+</div>
+
+</body>
+</html>
