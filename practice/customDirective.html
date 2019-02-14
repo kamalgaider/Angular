@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html ng-app = 'dir' ng-cloak>
+<head>
+	<title>My page</title>
+	<script src ="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.7.7/angular.js"></script>
+	<script type="text/javascript" src ="customDirective.js"></script>
+</head>
+<body>
+
+<div ng-controller ="cntrl">
+
+	<ul new-directive>
+		<li id = "john">John Deere</li>
+		<ol>
+			<li>Avg : 23</li>
+			<li>Max : 45</li>
+			<li>Min : 5</li>
+		</ol>
+
+		<li id = "hank">Tom Hank</li>
+		<ol>
+			<li>Avg : 26</li>
+			<li>Max : 54</li>
+			<li>Min : 8</li>
+		</ol>
+
+		<li id = "chintu">Chintu Sharma</li>
+		<ol>
+			<li>Avg : 28</li>
+			<li>Max : 49</li>
+			<li>Min : 11</li>
+		</ol>
+
+	</ul>
+	
+	<h3>Student Names: </h3>
+	<span id ="nameList">This string will be replaced by JS</span><br>
+
+<hr>
+
+	<div pick-this-array ="players" show-this-attribute ="fname | uppercase"></div>
+
+<hr>
+
+<!--custom directive-->
+<coder name = 'coderRaj'></coder><br>
+<coder name = 'coderMohit'></coder>
+
+<hr>
+
+<p add-heading>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</p>
+
+
+</div>
+
+</body>
+</html>
