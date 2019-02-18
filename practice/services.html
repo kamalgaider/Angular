@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html ng-app ='AppServ' ng-cloak>
+<head>
+	<title>Services</title>
+	<script src ='https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.7.7/angular.js'></script>
+	<script src='https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.7.7/angular-sanitize.min.js'></script>
+	<script src='services.js' type="text/javascript"></script>
+</head>
+<body>
+
+<div ng-controller ='cntrl'></div>
+
+<div ng-controller ='cntrl2'>
+	
+	<input type="text" ng-model ='fname'>
+	<button ng-click = 'greet(fname)'>Greet</button>
+
+	<label>URL:</label>{{CurrURL}}<br>
+	<label>time:</label>{{tm}}
+
+
+</div>
+
+</body>
+</html>
